@@ -129,8 +129,8 @@ class KinerGuide extends React.Component {
 
                 borderTop = react.top;
                 borderLeft = react.left;
-                borderRight = offsetWidth - borderLeft - react.width;
-                borderBottom = offsetHeight - borderTop - react.height;
+                borderRight = offsetWidth - react.right;
+                borderBottom = offsetHeight - react.bottom;
 
                 if (offset < 0) {
                     borderLeft += Math.abs(offset);

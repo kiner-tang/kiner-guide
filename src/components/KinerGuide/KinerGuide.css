@@ -1,0 +1,38 @@
+.guideModal-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    z-index: 999999999;
+}
+.guideModal-container .mask {
+    position: absolute;
+    border: 0 solid rgba(0, 0, 0, 0.7);
+    transition: all .3s;
+    z-index: 999999;
+    pointer-events: none;
+    overflow: hidden;
+}
+.guideModal-container .mask .target {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    outline: 7px solid rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.7), inset 0 0 15px #ccc;
+    background-color: transparent;
+}
+.guideModal-container .mask .target.circular{
+    border-radius: 50%;
+    box-shadow: 0 0 0 15px rgba(0, 0, 0, 0.7), inset 0 0 15px #ccc;
+}
+.guideModal-container .guide-content {
+    position: fixed;
+    z-index: 9999999;
+    width: 100%;
+    color: #FFFFFF;
+}

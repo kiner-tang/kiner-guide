@@ -147,8 +147,8 @@ class KinerGuide extends React.Component {
                 borderTop = react.top;
                 borderLeft = react.left;
 
-                borderRight = offsetWidth - borderLeft - react.width;
-                borderBottom = offsetHeight - borderTop - react.height;
+                borderRight = offsetWidth - react.right;
+                borderBottom = offsetHeight - react.bottom;
 
 
                 //offsetX
@@ -176,6 +176,7 @@ class KinerGuide extends React.Component {
 
             }
 
+            //若为自动选择指引提示面板位置，则根据目标块距离屏幕中心点的位置判断应该显示在上方还是下方
             if (guidePosition === 'auto') {
 
                 if (react.top + react.height / 2 > window.innerHeight / 2) {
@@ -196,9 +197,11 @@ class KinerGuide extends React.Component {
                     top: top,
                     borderWidth: `${borderTop}px ${borderRight}px ${borderBottom}px ${borderLeft}px`
                 }}>
+                    {/*辅助元素，主要的目标是用来生成内圆角*/}
                     <div className={`target ${type}`}>
                     </div>
                 </div>
+                {/*操作指引提示面板*/}
                 <div className="guide-content" style={{
                     left: 0,
                     top: `${guidePosition === 'top' ? react.top - (offset === undefined ? offsetY : offset) / 2 : react.bottom + (offset === undefined ? offsetY : offset) / 2}px`,
